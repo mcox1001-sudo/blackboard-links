@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Open in Blackboard</title>
+    <meta property="og:title" content="Blackboard Deals" />
+    <meta property="og:description" content="Real-time deals from local venues. Open in the Blackboard app." />
+    <meta property="og:image" content="https://links.blackboarddeals.com/og.png" />
+    <meta name="apple-itunes-app" content="app-id=6764248078" />
+    <style>
+      :root { color-scheme: dark; }
+      html, body { margin: 0; height: 100%; background: #060608; color: #f2f2ef; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+      .wrap { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100%; padding: 32px; text-align: center; gap: 24px; }
+      h1 { margin: 0; font-size: 28px; font-weight: 800; letter-spacing: -0.5px; }
+      p { margin: 0; color: #9ca3af; max-width: 360px; line-height: 1.5; }
+      .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 28px; border-radius: 999px; background: #f2f2ef; color: #060608; text-decoration: none; font-weight: 600; }
+      .btn.secondary { background: transparent; color: #9ca3af; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>Opening Blackboard…</h1>
+      <p id="msg">If the app doesn't open in a moment, get it from the App Store or Google Play.</p>
+      <a id="cta" class="btn" href="#">Get the app</a>
+      <a class="btn secondary" href="https://blackboarddeals.com/">Back to blackboarddeals.com</a>
+    </div>
+    <script>
+      (function () {
+        var IOS_STORE = "https://apps.apple.com/app/id6764248078";
+        var ANDROID_STORE = "https://play.google.com/store/apps/details?id=com.blackboarddeals.app";
+        var ua = navigator.userAgent || "";
+        var isIOS = /iPad|iPhone|iPod/.test(ua);
+        var isAndroid = /Android/.test(ua);
+        var cta = document.getElementById("cta");
+        var storeUrl = isIOS ? IOS_STORE : isAndroid ? ANDROID_STORE : null;
+        if (storeUrl) cta.href = storeUrl;
+        else cta.style.display = "none";
+
+        if (isAndroid) {
+          var path = window.location.pathname;
+          window.location.replace(
+            "intent://links.blackboarddeals.com" + path +
+            "#Intent;scheme=https;package=com.blackboarddeals.app;S.browser_fallback_url=" +
+            encodeURIComponent(ANDROID_STORE) + ";end"
+          );
+          return;
+        }
+
+        if (isIOS) {
+          setTimeout(function () { window.location.replace(IOS_STORE); }, 1500);
+        }
+      })();
+    </script>
+  </body>
+</html>
