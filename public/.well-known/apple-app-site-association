@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "5SJ6Y2CC5D.com.blackboarddeals.app",
+        "paths": ["/venue/*", "/deal/*"]
+      }
+    ]
+  }
+}
