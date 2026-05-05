@@ -1,0 +1,14 @@
+[
+    {
+          "relation": ["delegate_permission/common.handle_all_urls"],
+          "target": {
+                  "namespace": "android_app",
+                  "package_name": "com.blackboarddeals.app",
+                  "sha256_cert_fingerprints": [
+                            "EB:BA:E3:6A:1D:49:B2:9F:6C:44:D9:1E:79:BF:0E:0F:18:E9:41:85:0B:7B:27:FA:7B:BC:4D:D7:3A:C1:2F:38",
+                            "37:77:1C:2C:3A:E9:5D:1D:2B:39:5F:7B:10:CB:A2:35:3D:CD:A6:F6:CE:6A:A1:BC:EF:14:90:DE:F0:63:75:C2",
+                            "85:F6:C6:30:5A:C9:28:8C:16:4A:40:FB:64:89:ED:5E:FC:68:32:A1:00:A0:D7:D0:6B:22:F9:C2:C1:72:24:96"
+                  ]
+          }
+    }
+]
